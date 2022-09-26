@@ -139,7 +139,6 @@ def create_random_btn(msg):
 @bot.message_handler(func=lambda msg: msg.text == 'Рандом фото')
 def send_random_photo(msg):
     messages_storage.append(msg.text)
-    print(f'"{messages_storage[-1]}" от: {msg.from_user.first_name}')
 
     hmmims = len(messages_storage) #how_many_messages_in_messages_store
     if hmmims / 20 == 1 or hmmims / 20 == 2 or hmmims / 20 == 3 or hmmims / 20 == 4 or hmmims / 20 == 5 or hmmims / 20 == 6 or hmmims / 20 == 7 or hmmims / 20 == 8 or hmmims / 20 == 9 or hmmims / 20 == 10:
@@ -205,7 +204,6 @@ def directions(msg):
 
 def check_what_year(msg):
     messages_storage.append(msg.text)
-    print(messages_storage[-1])
     if messages_storage[-2] == 'Сас' and msg.text == '2022':
         stas_2022(msg)
     elif messages_storage[-2] == 'Сас' and msg.text == '2021':
@@ -387,10 +385,7 @@ def again(msg):
 @bot.message_handler(content_types=['text'])
 def any_message(msg):
     messages_storage.append(msg.text)
-    try:
-        print(f'"{messages_storage[-1]}"')
-    except IndexError:
-        print(messages_storage[-1])
+    print(messages_storage)
     print(f'айди чата: {msg.chat.id} пользователь: {msg.from_user.username} {msg.from_user.first_name} {msg.from_user.last_name}')
     #print(msg.from_user.first_name)
     #print(msg.from_user.last_name)
