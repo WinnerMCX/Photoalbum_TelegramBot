@@ -2,6 +2,14 @@ import telebot
 from telebot import types
 import random
 import Settings
+from flask import Flask, json,request
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+app = Flask(__name__)
+@app.route('/')
+def index():
+    return '<p>Hello, World!</p>'
 
 
 messages_storage = []
