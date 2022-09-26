@@ -1,1 +1,11 @@
 Settings.py
+Test1.py
+Test2.py
+Test3.py
+StopWatch(TKinter).py
+*.log
+.vscode/
+.idea/
+enb/
+.DS_Store
+__pycache__/
