@@ -2,15 +2,6 @@ import telebot
 from telebot import types
 import random
 import Settings
-from flask import Flask, json,request
-import logging
-
-logging.basicConfig(level=logging.DEBUG)
-app = Flask(__name__)
-@app.route('/')
-def index():
-    return '<p>Hello, World!</p>'
-
 
 messages_storage = []
 lst_random_phrases = ['Смотри, какой я классный', 'Ыыы', 'Здравствуйте, меня зовут Дядя Степа, мне 24 годика', 'Говорят, что в первый раз только геморрой', 'Паровозик турутуру', 'Я не пидр, я гомосексуал', 'Называй меня дробителем аналов']
@@ -133,7 +124,7 @@ def send_help(msg):
 @bot.message_handler(commands=['download','скачать'])
 def send_all_photos(msg):
     messages_storage.append(msg.text)
-    with open('Photoalbum_telegrambot/Архив WinRaR.rar', 'rb') as open1:
+    with open('Архив WinRaR.rar', 'rb') as open1:
         bot.send_message(msg.chat.id, 'Внизу абсолютно все фотки')
         bot.send_document(msg.chat.id, open1)
 
